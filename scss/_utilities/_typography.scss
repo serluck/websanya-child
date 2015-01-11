@@ -1,0 +1,50 @@
+/* ## Vertical Rhythm
+--------------------------------------------- */
+
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/hyphenation";
+
+$debug: true !global;
+$base-font-size: 16px !global;
+$base-line-height: 11px !global;
+$default-rhythm-border-width: 1px !global;
+$rhythm-unit: "rem" !global;
+
+html {
+	font-size: 100%;
+	@include adjust-leading-to(2);
+	@include breakpoint($kyle) {
+		font-size: 127.27272727%;
+		@include adjust-leading-to(2.54545454);
+	}
+}
+body {
+	@if ($debug) {
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%);
+		-webkit-background-size: 100% 11px;
+		background-size: 100% 11px;
+		background-position: left top;
+		@include breakpoint($kyle) {
+			-webkit-background-size: 100% 14px;
+			background-size: 100% 14px;
+		}
+	}
+}
+
+/* ## Font Stack
+--------------------------------------------- */
+
+$font-stack: garamond-premier-pro-display, Georgia, serif !global;
+
+/* ## Some mixins
+--------------------------------------------- */
+
+@mixin hyphenation {
+  @include word-break(break-all);
+  @include hyphens;
+}
+
+@mixin ws-padding($counter: 1) {
+	padding-left: $base-line-height * $counter;
+	padding-right: $base-line-height * $counter;
+}

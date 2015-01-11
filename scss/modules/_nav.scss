@@ -1,0 +1,150 @@
+/* ## Site Header Navigation Container
+--------------------------------------------- */
+
+.site-header .nav-header {
+	float: none;
+	@include breakpoint($kenny) {
+		float: right;
+		@include rhythm-padding();
+	}
+}
+
+/* ## The Menu Itself (Genesis Header Nav plugin)
+--------------------------------------------- */
+
+.site-header .nav-header .genesis-nav-menu {
+	display: none;
+	@include breakpoint($kenny) {
+		display: block;
+	}
+	.menu-item {
+		display: inline-block;
+		a {
+			display: block;
+			@include rhythm-padding(2);
+			@include ws-padding(2);
+			&:hover {
+				color: ws-color("primary-marsala");
+			}
+		}
+	}
+}
+
+/* ## Responsive Trigger
+--------------------------------------------- */
+
+#trigger-overlay {
+	display: inline-block;
+	height: 0.6875rem*3;
+	width: 0.6875rem*3;
+	float: right;
+	@include rhythm-margins(2);
+	cursor: pointer;
+	path {
+		@include single-transition(fill, 0.1s);
+	}
+	&:hover path {
+		@include single-transition(fill, 0.1s);
+		fill: ws-color("primary-marsala");
+	}
+	@include breakpoint($kyle) {
+		@include rhythm-margins(2.5);
+	}
+	@include breakpoint($kenny) {
+		display: none;
+	}
+}
+
+/* ## Mobile Overlay style
+--------------------------------------------- */
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(ws-color("primary-marsala"),.9);
+	z-index: 110;
+}
+
+/* ## Mobile Overlay closing cross
+--------------------------------------------- */
+
+.overlay .overlay-close {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 120;
+}
+
+/* ## Mobile Overlay Menu style
+--------------------------------------------- */
+
+@import "compass/css3/transform";
+
+.overlay {
+	nav {
+		position: relative;
+		height: 70%;
+		top: 50%;
+		@include transform(translateY(-50%));
+		font-size: 1.875rem;
+		@include adjust-leading-to(3);
+		text-align: center;
+	}
+	ul {
+		display: inline-block;
+		position: relative;
+		padding: 0;
+		margin: 23% auto;
+		list-style: none;
+		li {
+			display: block;
+			height: calc(100% / 3);
+			min-height: 60px;
+			@include breakpoint($kyle) {
+				min-height: 85px;
+			}
+			a {
+				display: block;
+				color: ws-color("primary-white");
+				&:hover, &:focus {
+					color: ws-color("primary-black");
+				}
+			}
+		}
+	}
+}
+
+/* ## Mobile Overlay effects
+--------------------------------------------- */
+
+.overlay-hugeinc {
+	opacity: 0;
+	visibility: hidden;
+	@include transition(opacity 0.5s, visibility 0s 0.5s);
+	nav {
+		@include perspective(1200px);
+		ul {
+			opacity: 0.4;
+			@include transform(translateY(-25%), rotateX(35deg));
+			@include transition(transform 0.5s, opacity 0.5s);
+		}
+	}
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		@include single-transition(opacity, 0.5s);
+		nav ul {
+			opacity: 1;
+			@include transform(rotateX(0deg));
+		}
+	}
+	&.close nav ul {
+		@include transform(translateY(25%), rotateX(-35deg));
+	}
+}

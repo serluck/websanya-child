@@ -1,0 +1,297 @@
+/* # Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Box Sizing
+--------------------------------------------- */
+
+@import "compass/css3/box-sizing";
+
+*,
+input[type="search"] {
+	@include box-sizing;
+	@include hyphenation;
+}
+
+/* ## Typographical Elements
+--------------------------------------------- */
+
+@import "compass/css3/transition";
+@import "compass/css3/selection";
+
+* {
+	@include selection(ws-color("primary-black"), ws-color("primary-white"));
+}
+
+body {
+	@if (not $debug) {
+		background-color: ws-color("primary-white");
+	}	
+	color: ws-color("primary-black");
+	font-family: $font-stack;
+	font-weight: 300;
+	margin: 0;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	@include single-transition( color, 0.1s, ease-in-out );
+}
+
+a {
+	color: ws-color("primary-marsala");
+	text-decoration: none;
+	&:hover {
+		color: ws-color("primary-black");
+	}
+}
+
+p {
+	margin: 0;
+	@include margin-trailer(2);
+	padding: 0;
+}
+
+ol,
+ul,
+dl {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+b,
+strong,
+cite {
+	font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote,
+pre {
+	margin: 0;
+	@include rhythm-margins();
+}
+
+blockquote {
+	@include ws-padding(3);
+	border-left: 3px solid ws-color("primary-marsala");
+}
+
+pre {
+	@include rhythm-padding();
+	@include ws-padding();
+	font-size: 0.875rem;
+	@include adjust-leading-to(2);
+	background-color: ws-color("primary-black");
+	color: ws-color("primary-white");
+	border-radius: 3px;
+}
+
+address {
+	@include margin-trailer();
+}
+
+code,
+big,
+kbd,
+tt,
+small,
+strong,
+sub,
+sup {
+	@include adjust-leading-to(1);
+}
+
+code,
+tt {
+	background-color: ws-color("primary-black");
+	color: ws-color("primary-white");
+	padding: 3px 5px;
+	border-radius: 3px;
+}
+
+/* ## Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: ws-color("primary-black");
+	font-weight: 400;
+	margin: 0;
+}
+
+h1 {
+	font-size: 1.875rem;
+	@include adjust-leading-to(4);
+}
+h2 {
+	font-size: 1.5rem;
+	@include adjust-leading-to(3);
+}
+h3 {
+	font-size: 1.375rem;
+	@include adjust-leading-to(3);
+}
+h4 {
+	@include margin-trailer();
+	font-size: 1.25rem;
+	@include adjust-leading-to(2);
+}
+h5 {
+	@include margin-trailer();
+	font-size: 1.125rem;
+	@include adjust-leading-to(2);
+}
+h6 {
+	@include margin-trailer();
+	font-size: 1rem;
+	@include adjust-leading-to(2);
+}
+
+/* ## Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+	height: auto;
+}
+
+iframe,
+img {
+	display: block;
+}
+
+/* ## Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea {
+	display: block;
+	width: 100%;
+	margin: 0;
+	@include apply-side-rhythm-border(all, $lines: 0.5);
+	outline: none;
+	font-family: $font-stack;
+	font-size: 1.125rem;
+	@include adjust-leading-to(2);
+	font-weight: 300;
+	background-color: ws-color("primary-white");
+	color: ws-color("primary-black");
+	&:focus {
+		outline: none;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	&:first-line {
+		display: inline-block;
+	}
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+::-moz-placeholder {
+	color: ws-color("primary-black");
+	font-weight: 300;
+	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	color: ws-color("primary-black");
+	font-weight: 300;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+	display: block;
+	width: auto;
+	margin: 0;
+	@include rhythm-padding(0.5);
+	@include ws-padding(2);
+	border: none;
+	border-radius: 3px;
+	font-size: 1rem;
+	@include adjust-leading-to(2);
+	font-weight: 300;
+	background-color: ws-color("primary-black");
+	color: ws-color("primary-white");
+	cursor: pointer;
+	&:hover {
+		background-color: ws-color("primary-marsala");
+		color: ws-color("primary-white");
+	}
+}
+
+.button {
+	display: inline-block;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+/* ## Tables
+--------------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	@include margin-trailer(2);
+	table-layout: fixed;
+	width: 100%;
+}
+
+tr {
+	border-bottom: 1px solid ws-color("primary-gray");
+}
+
+td,
+th {
+	text-align: left;
+	@include padding-leader();
+	@include ws-padding(1);
+	padding-bottom: 10px;
+	@include breakpoint($kyle) {
+		padding-bottom: 13px;
+	}
+}
+
+th {
+	font-weight: 700;
+}

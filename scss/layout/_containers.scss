@@ -1,0 +1,23 @@
+/* ## Site Container & Wrap
+--------------------------------------------- */
+
+.wrap {
+	margin: 0 auto;
+	max-width: 800px;
+	@include breakpoint($kenny) {
+		max-width: 960px;	
+	}
+	@include breakpoint($cartman) {
+		max-width: 1200px;
+	}
+}
+
+.site-inner {
+	margin: 0 auto;
+	@include padding-leader(2);
+	@include ws-padding(2);
+	max-width: 740px;
+	position: relative;
+	z-index: 100;
+	clear: both;
+}

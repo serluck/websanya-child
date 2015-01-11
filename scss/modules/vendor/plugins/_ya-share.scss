@@ -1,0 +1,11 @@
+/* ## Yandex Share
+--------------------------------------------- */
+
+.yandex-share {
+	@include rhythm-margins(2);
+	display: none;
+	text-align: center;
+	.single & {
+		display: block;
+	}
+}

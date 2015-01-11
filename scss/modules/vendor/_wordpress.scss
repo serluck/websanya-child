@@ -1,0 +1,83 @@
+/* ## WordPress
+--------------------------------------------- */
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+	@include margin-trailer();
+}
+
+img.alignnone,
+.alignnone {
+	@include margin-trailer();
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	@include margin-trailer();
+	margin-right: $base-line-height;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	@include margin-trailer();
+	margin-left: $base-line-height;
+}
+
+.wp-caption-text {
+	font-weight: 400;
+	text-align: center;
+}
+
+.entry-content p.wp-caption-text {
+	margin-bottom: 0;
+}
+
+/* ## WP Audio Shortcode
+--------------------------------------------- */
+
+.wp-audio-shortcode {
+	height: $base-line-height * 2 !important;
+}
+
+/* ## WP Video
+--------------------------------------------- */
+
+.iframe-container {
+	&:after {
+		clear: both;
+		display: table;
+		content: "";
+	}
+	> iframe {
+		float: left;
+	}
+}

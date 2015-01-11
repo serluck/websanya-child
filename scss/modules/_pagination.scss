@@ -1,0 +1,59 @@
+/* ## Pagination
+--------------------------------------------- */
+
+.pagination {
+	clear: both;
+	@include margin-leader();
+	@include margin-trailer(2);
+	@include breakpoint($kyle) {
+		@include margin-trailer(3);
+	}
+	li {
+		display: inline;
+		margin-right: $base-line-height;
+		a {
+			background-color: ws-color("primary-black");
+			color: ws-color("primary-white");
+			cursor: pointer;
+			display: inline-block;
+			@include rhythm-padding(0.5);
+			@include ws-padding(1.5);
+			border-radius: 3px;
+		}
+	}
+}
+
+.pagination-previous, .pagination-next {
+	width: 100%;
+	a {
+		color: ws-color("primary-white");
+		background-color: ws-color("primary-black");
+		display: block;
+		text-align: center;
+		width: 100%;
+		@include margin-trailer();
+		@include rhythm-padding(0.5);
+		@include ws-padding(1.5);
+		border-radius: 3px;
+		&:hover {
+			background-color: ws-color("primary-marsala");
+		}
+	}
+	@include breakpoint($kyle) {
+		width: auto;
+		a {
+			width: auto;
+			text-align: left;
+			display: inline;
+		}
+	}
+}
+
+.pagination li a:hover,
+.pagination .active a {
+	background-color: ws-color("primary-marsala");
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}

@@ -1,0 +1,81 @@
+/* ## Basic elements
+--------------------------------------------- */
+
+.entry {
+	@include margin-trailer(2);
+	&:last-of-type {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+
+.page .entry-content {
+	@include margin-trailer(2);
+}
+
+.entry-content {
+	h2 {
+		& + img {
+			@include margin-leader();
+		}
+	}
+	& > p, & > ul, & > ol, & > dl {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	ul, ol, dl {
+		@include margin-trailer(2);
+		margin-left: $base-line-height * 3;
+		ol, ul, dl {
+			margin-bottom: 0;
+		}
+	}
+	ol > li {
+		list-style-type: decimal;
+	}
+	ul > li {
+		list-style-type: disc;
+	}
+}
+
+.wp-post-image {
+	margin: auto;
+	@include margin-trailer(2);
+}
+
+/* ## Sticky post styles
+--------------------------------------------- */
+
+.sticky {
+	.entry-title {
+		&:after {
+			content: "закреплено";
+			float: right;
+			font-size: 1rem;
+			@include adjust-leading-to(2);
+			font-style: italic;
+		}
+	}
+}
+
+/* ## Entry Meta
+--------------------------------------------- */
+
+a.more-link {
+	@extend button;
+	display: inline-block;
+	text-transform: none;
+	@include rhythm-padding(0.5);
+	@include ws-padding(1.5);
+	border-radius: 3px;
+}
+
+.entry-header .entry-meta {
+	@include margin-trailer();
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+}

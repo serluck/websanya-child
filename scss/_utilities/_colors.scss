@@ -1,0 +1,19 @@
+/* ## Color management
+--------------------------------------------- */
+
+$white-crew: 		#f6f6f6;
+$black-crew: 	 	#2a3333;
+$gray-crew:     #6a7171;
+$marsala: 			#955251;
+$marsala-light: #c46858;
+
+$theme: (
+	"primary-white": 	 $white-crew,
+	"primary-black": 	 $black-crew,
+	"primary-gray":    $gray-crew,
+	"primary-marsala": $marsala,
+);
+
+@function ws-color($name) {
+	@return map-get($theme, $name);
+}

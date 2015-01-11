@@ -1,0 +1,16 @@
+/* ## Footer Container
+--------------------------------------------- */
+
+.site-footer {
+	@include rhythm-padding(2);
+	@include ws-padding(2);
+	text-align: center;
+	background-color: ws-color("primary-black");
+	color: ws-color("primary-white");
+	p {
+		margin-bottom: 0;
+	}
+	a:hover {
+		color: ws-color("primary-white");
+	}
+}

@@ -1,0 +1,67 @@
+/* ## Header Container
+--------------------------------------------- */
+
+.site-header {
+	@include rhythm-padding(1);
+	@include ws-padding(2);
+	@include breakpoint($kenny) {
+		@include margin-trailer(3);
+		@include rhythm-padding(2);
+	}
+	position: relative;
+	z-index: 100;
+	margin: 0;
+	.admin-bar & {
+		top: 0 !important;
+	}
+}
+
+/* ## Custom Header
+--------------------------------------------- */
+
+.ws-custom-header {
+	position: absolute;
+	height: 500px;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.6;
+	background: no-repeat center center;
+	background-size: cover;
+	z-index: 0;
+}
+
+/* ## Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+	@include rhythm-padding();
+}
+
+.site-title {
+	font-size: 1.5rem;
+	@include adjust-leading-to(3);
+	@include breakpoint($kyle) {
+		font-size: 1.875rem;
+		@include adjust-leading-to(4);
+	}
+	font-weight: 400;
+	a {
+		color: ws-color("primary-black");
+		&:hover {
+			color: ws-color("primary-marsala") !important;
+		}
+	}
+}
+
+.site-description {
+	font-size: 1rem;
+	@include adjust-leading-to(2);
+	font-weight: 300;
+}
+
+.site-description,
+.site-title {
+	margin-bottom: 0;
+}
