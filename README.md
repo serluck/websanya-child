@@ -42,7 +42,7 @@ This theme supports the [GitHub Updater](https://github.com/afragen/github-updat
 * Fixed iframe vertical rhythm by floating it inside paragraph
 * Moved mobile navigation to separate scss-file
 * Removed default Genesis favicon
-* Changed font to FF Meta Serif Web Pro
+* Changed font to Adobe Text Pro
 
 ### 1.0.2
 * Fixed iframe behaviour for YouTube
