@@ -36,10 +36,25 @@ This theme supports the [GitHub Updater](https://github.com/afragen/github-updat
 
 ## Changelog
 
+### 1.0.3
+* Removed old php code
+* Adjusted opacity and height for header image
+* Fixed iframe vertical rhythm by floating it inside paragraph
+* Moved mobile navigation to separate scss-file
+* Removed default Genesis favicon
+
+### 1.0.2
+* Fixed iframe behaviour for YouTube
+* Fixed bugs with GutHub update plugin
+* Fixed margins for h2 elemenets in entry-content
+
+### 1.0.1
+* Removing debug mode
+
 ### 1.0.0
 * Initial release
 
 ## Credits
 
-Built by [Alexander Goncharov](http://websanya.ru/)
+Built by [Alexander Goncharov](http://websanya.ru/)  
 Copyright 2015 [Alexander Goncharov](http://websanya.ru/)

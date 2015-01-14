@@ -28,7 +28,7 @@ body {
 	}	
 	color: ws-color("primary-black");
 	font-family: $font-stack;
-	font-weight: 300;
+	font-weight: normal;
 	margin: 0;
 }
 
@@ -72,7 +72,7 @@ li {
 b,
 strong,
 cite {
-	font-weight: 700;
+	font-weight: bold;
 }
 
 blockquote,
@@ -136,7 +136,7 @@ h4,
 h5,
 h6 {
 	color: ws-color("primary-black");
-	font-weight: 400;
+	font-weight: normal;
 	margin: 0;
 }
 
@@ -207,7 +207,7 @@ textarea {
 	font-family: $font-stack;
 	font-size: 1.125rem;
 	@include adjust-leading-to(2);
-	font-weight: 300;
+	font-weight: normal;
 	background-color: ws-color("primary-white");
 	color: ws-color("primary-black");
 	&:focus {
@@ -231,13 +231,13 @@ input[type="radio"] {
 
 ::-moz-placeholder {
 	color: ws-color("primary-black");
-	font-weight: 300;
+	font-weight: normal;
 	opacity: 1;
 }
 
 ::-webkit-input-placeholder {
 	color: ws-color("primary-black");
-	font-weight: 300;
+	font-weight: normal;
 }
 
 button,
@@ -254,7 +254,7 @@ input[type="submit"],
 	border-radius: 3px;
 	font-size: 1rem;
 	@include adjust-leading-to(2);
-	font-weight: 300;
+	font-weight: normal;
 	background-color: ws-color("primary-black");
 	color: ws-color("primary-white");
 	cursor: pointer;
@@ -300,5 +300,5 @@ th {
 }
 
 th {
-	font-weight: 700;
+	font-weight: bold;
 }

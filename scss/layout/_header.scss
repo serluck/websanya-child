@@ -22,10 +22,11 @@
 .ws-custom-header {
 	position: absolute;
 	height: 500px;
+	max-height: 50%;
 	top: 0;
 	left: 0;
 	right: 0;
-	opacity: 0.6;
+	opacity: 0.5;
 	background: no-repeat center center;
 	background-size: cover;
 	z-index: 0;
@@ -46,7 +47,7 @@
 		font-size: 1.875rem;
 		@include adjust-leading-to(4);
 	}
-	font-weight: 400;
+	font-weight: normal;
 	a {
 		color: ws-color("primary-black");
 		&:hover {
@@ -58,7 +59,7 @@
 .site-description {
 	font-size: 1rem;
 	@include adjust-leading-to(2);
-	font-weight: 300;
+	font-weight: normal;
 }
 
 .site-description,

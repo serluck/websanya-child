@@ -15,8 +15,12 @@
 
 .entry-content {
 	h2 {
-		& + img {
-			@include margin-leader();
+		@include margin-trailer();
+	}
+	p {
+		@include pie-clearfix;
+		iframe {
+			float: left;
 		}
 	}
 	& > p, & > ul, & > ol, & > dl {

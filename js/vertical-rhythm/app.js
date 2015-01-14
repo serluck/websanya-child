@@ -13,10 +13,10 @@
 	setTimeout(function() {
 		if ($(window).width() >= 768) {
 			$("img").keepTheRhythm({ baseLine: 14 });
-			$("iframe").keepTheRhythm({ baseLine: 14 });
+			$("iframe").keepTheRhythm({ baseLine: 14, spacing: "margin" });
 		} else {
 			$("img").keepTheRhythm({ baseLine: 11 });
-			$("iframe").keepTheRhythm({ baseLine: 11 });
+			$("iframe").keepTheRhythm({ baseLine: 11, spacing: "margin" });
 		}
 	}, 500);
 	$("p + iframe").parent().addClass("iframe-container");

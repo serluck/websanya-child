@@ -53,3 +53,10 @@ add_action( 'genesis_meta', 'ws_viewport_meta_tag' );
 function ws_viewport_meta_tag() {
 	print('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>');
 }
+
+/**
+ * Remove favicon.
+ *
+ * @since 1.0.3
+ */
+remove_action('wp_head', 'genesis_load_favicon');
