@@ -19,7 +19,7 @@
 			$("iframe").keepTheRhythm({ baseLine: 11, spacing: "margin" });
 		}
 	}, 500);
-	$("p + iframe").parent().addClass("iframe-container");
+	$("iframe").parent('p').addClass("iframe-container");
 	setTimeout(function() {
 		if ($(window).width() >= 768) {
 			$("div[data-twttr-id]").keepTheRhythm({ baseLine: 14 });

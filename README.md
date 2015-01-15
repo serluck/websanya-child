@@ -36,6 +36,9 @@ This theme supports the [GitHub Updater](https://github.com/afragen/github-updat
 
 ## Changelog
 
+### 1.0.4
+* Fixed bug with iframe container paragraphs
+
 ### 1.0.3
 * Removed old php code
 * Adjusted opacity and height for header image

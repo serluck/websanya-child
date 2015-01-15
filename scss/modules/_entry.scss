@@ -18,7 +18,9 @@
 		@include margin-trailer();
 	}
 	p {
-		@include pie-clearfix;
+		&.iframe-container {
+			@include pie-clearfix;
+		}
 		iframe {
 			float: left;
 		}
