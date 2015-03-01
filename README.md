@@ -36,8 +36,15 @@ This theme supports the [GitHub Updater](https://github.com/afragen/github-updat
 
 ## Changelog
 
+### 1.0.5
+* Added some margins for entries and pagination
+* Removed comment links
+* Altered all entry titles on archives and singles
+* Removed parameters from CSS and JS links
+
 ### 1.0.4
 * Fixed bug with iframe container paragraphs
+* Added margins for aligned images
 
 ### 1.0.3
 * Removed old php code

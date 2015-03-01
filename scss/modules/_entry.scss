@@ -1,13 +1,59 @@
-/* ## Basic elements
+/* ## Entry
 --------------------------------------------- */
 
 .entry {
+	@include margin-leader(2);
 	@include margin-trailer(2);
-	&:last-of-type {
-		padding-bottom: 0;
-		margin-bottom: 0;
+	@include breakpoint($kyle) {
+		@include margin-trailer(4);
+		&:last-of-type {
+			@include margin-trailer(3);
+		}
 	}
 }
+
+/* ## Entry Header
+--------------------------------------------- */
+
+.entry-title {
+	@include breakpoint($kyle) {
+		font-weight: 700;
+		font-size: 1.875rem;
+		@include adjust-leading-to(3);
+	}
+}
+
+.entry-meta {
+	@include margin-trailer();
+}
+
+.single .entry-header,
+.page .entry-header {
+	text-align: center;
+	@include margin-trailer(2);
+	@include breakpoint($kyle) {
+		@include margin-trailer(3);
+	}
+	.entry-title {
+		@include adjust-leading-to(3);
+		font-weight: normal;
+		@include hyphens(manual);	
+		@include breakpoint($kyle) {
+			font-size: 3.5rem;
+			@include adjust-leading-to(5);
+		}
+	}
+	.entry-meta {
+		@include breakpoint($kyle) {
+			font-size: 1.25rem;
+			@include adjust-leading-to(2);
+			@include margin-leader();	
+		}
+	}
+}
+
+/* ## Entry Content
+--------------------------------------------- */
 
 .page .entry-content {
 	@include margin-trailer(2);
@@ -45,6 +91,15 @@
 	}
 }
 
+a.more-link {
+	@extend button;
+	display: inline-block;
+	text-transform: none;
+	@include rhythm-padding(0.5);
+	@include ws-padding(1.5);
+	border-radius: 3px;
+}
+
 .wp-post-image {
 	margin: auto;
 	@include margin-trailer(2);
@@ -63,25 +118,4 @@
 			font-style: italic;
 		}
 	}
-}
-
-/* ## Entry Meta
---------------------------------------------- */
-
-a.more-link {
-	@extend button;
-	display: inline-block;
-	text-transform: none;
-	@include rhythm-padding(0.5);
-	@include ws-padding(1.5);
-	border-radius: 3px;
-}
-
-.entry-header .entry-meta {
-	@include margin-trailer();
-}
-
-.entry-comments-link::before {
-	content: "\2014";
-	margin: 0 6px 0 2px;
 }

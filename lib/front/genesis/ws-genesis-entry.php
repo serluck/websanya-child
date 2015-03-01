@@ -15,10 +15,14 @@
  */
 add_filter( 'genesis_post_info', 'ws_post_info_filter' );
 function ws_post_info_filter($post_info) {
-if ( !is_page() ) {
-	$post_info = '<a href="' . get_permalink() . '">[post_date]</a> [post_comments] [post_edit]';
-	return $post_info;
-}}
+	if ( !is_singular() ) {
+		$post_info = 'Опубликовано [post_date] [post_edit]';
+		return $post_info;
+	} else {
+		$post_info = '[post_date] [post_edit]';
+		return $post_info;
+	}
+}
 
 /**
  * Remove the entry meta & the entry footer markup (requires HTML5 theme support).

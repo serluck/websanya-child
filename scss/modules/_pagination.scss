@@ -3,9 +3,10 @@
 
 .pagination {
 	clear: both;
-	@include margin-leader();
+	@include margin-leader(3);
 	@include margin-trailer(2);
 	@include breakpoint($kyle) {
+		margin-top: 0;
 		@include margin-trailer(3);
 	}
 	li {

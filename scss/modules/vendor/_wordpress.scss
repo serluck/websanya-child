@@ -42,14 +42,14 @@ a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
 	@include margin-trailer();
-	margin-right: $base-line-height;
+	margin-right: $base-line-height * 2;
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
 	@include margin-trailer();
-	margin-left: $base-line-height;
+	margin-left: $base-line-height * 2;
 }
 
 .wp-caption-text {
